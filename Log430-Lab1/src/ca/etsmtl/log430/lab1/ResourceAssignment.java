@@ -149,6 +149,19 @@ public class ResourceAssignment {
 					} // if
 
 					break;
+				case '6':
+
+					display.displayResourceList(resourceList.getListOfResources());
+					resource = menu.pickResource(resourceList.getListOfResources());
+					if (resource != null) {
+						display.displayProjectsAlreadyAssignedToResource(resource, projectList.getListOfProjects());
+					} // if
+					
+					break;
+				case '7':
+					System.out.println("YOU PRESSED 7");
+					
+					break;
 
 				case 'X':
 
