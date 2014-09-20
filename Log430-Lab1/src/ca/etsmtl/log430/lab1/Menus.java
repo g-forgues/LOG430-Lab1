@@ -49,7 +49,7 @@ public class Menus {
 			System.out.println("4) List resources currently assigned to a project");
 			System.out.println("5) Assign a resource to a project");
 			System.out.println("6) List original projects assigned to a resource");
-			System.out.println("7) List all roles for a specific project");
+			System.out.println("7) List original and current roles for a specific project");
 			System.out.println("X) Exit");
 			System.out.print("\n\nEnter your choice and press return >> ");
 
@@ -114,6 +114,18 @@ public class Menus {
 		} // if
 
 		return (project);
+
+	} // pickProject
+	
+	public String pickProjectDisregardIfTheProjectExists(ProjectList list) {
+
+		Termio terminal = new Termio();
+		String userChoiceProjectID;
+
+		System.out.print("\nEnter project ID and press return >> ");
+		userChoiceProjectID = terminal.keyboardReadString();
+
+		return userChoiceProjectID;
 
 	} // pickProject
 

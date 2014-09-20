@@ -151,12 +151,15 @@ public class ResourceAssignment {
 					break;
 
 				case '7':
-					
 					display.displayProjectList(projectList.getListOfProjects());
-					project = menu.pickProject(projectList.getListOfProjects());
-
+					
+					//the reason I get the string from the terminal and not get the actual 'project' object from the project list is 
+					//because the user can search for a project available in resources.txt but doesn't appear in projects.txt (EX: P004)
+					String projectID = menu.pickProjectDisregardIfTheProjectExists(projectList.getListOfProjects());
+					project = projectList.getListOfProjects().findProjectByID(projectID);
+					
+					display.displayResourcesAlreadyAssignedToProject(projectID, resourceList.getListOfResources());
 					if (project != null) {
-						//display.displayResourcesBeforeExecutionAssignedToProject(project, resourceList.getListOfResources());
 						display.displayResourcesAssignedToProject(project);
 					} // if
 				break;

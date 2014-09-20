@@ -60,6 +60,12 @@ public class Project {
 	 */
 	private ResourceList resourcesAssigned = new ResourceList();
 
+	
+	/**
+	 *  List of resources the project is already allocated to
+	 */
+	private ResourceList alreadyAssignedResourceList = new ResourceList();
+	
 	public Project() {
 		this(null);
 	}
@@ -123,6 +129,11 @@ public class Project {
 
 	public ResourceList getResourcesAssigned() {
 		return resourcesAssigned;
+	}
+	
+	public ResourceList getAlreadyAssignedResourceList()
+	{
+		return alreadyAssignedResourceList;
 	}
 
 } // Project class

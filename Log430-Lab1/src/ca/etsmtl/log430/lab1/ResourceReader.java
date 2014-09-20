@@ -198,7 +198,11 @@ public class ResourceReader extends LineOfTextFileReader {
 				// This is where the projects are added to the list of projects
 				// previously assigned to this resource. Note that there are
 				// no details other than the project ID.
-				resource.getPreviouslyAssignedProjectList().addProject(new Project(token));
+				
+				//token is the project id - Eddy
+				Project project = new Project(token);
+				resource.getPreviouslyAssignedProjectList().addProject(project);
+				project.getAlreadyAssignedResourceList().addResource(resource); // added this for case 7 - Eddy
 				frontIndex = backIndex + 1;
 				break;
 
