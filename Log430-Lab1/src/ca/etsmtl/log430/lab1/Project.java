@@ -80,6 +80,9 @@ public class Project {
 	 * @param resource
 	 */
 	public void assignResource(Resource resource) {
+		
+		
+		
 		resourcesAssigned.addResource(resource);
 	}
 
